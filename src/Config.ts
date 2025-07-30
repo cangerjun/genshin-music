@@ -1,9 +1,9 @@
-import type {Tauri} from "$types/TauriTypes"
+import type {Tauri} from "$types/TauriTypes"  
 import type {NoteImage} from "$cmp/shared/SvgNotes"
 
-export const APP_NAME: AppName = process.env.NEXT_PUBLIC_APP_NAME as AppName || ["Sky", "Genshin"][1]
+export const APP_NAME: AppName = process.env.NEXT_PUBLIC_APP_NAME as AppName || ["Sky", "Genshin"][1]  
 export const APP_VERSION = '3.6.2' as const
-console.log(`${APP_NAME}-V${APP_VERSION}`)
+console.log(`${APP_NAME}-V${APP_VERSION}`)    
 export const UPDATE_MESSAGE = (APP_NAME === 'Genshin'
     ? `
 - Added translations to version page
@@ -35,7 +35,7 @@ export const BASE_THEME_CONFIG = {
     text: {
         light: '#eae8e6',
         dark: '#151414',
-        note: APP_NAME === 'Genshin' ? '#aaaa82' : '#eae8e6'
+        note: APP_NAME === 'Genshin' ? '#aaaa82' : '#eae8e6'  
     }
 }
 export const INSTRUMENTS = APP_NAME === "Genshin"
@@ -46,11 +46,12 @@ export const INSTRUMENTS = APP_NAME === "Genshin"
         "Old-Zither",
         "Ukulele",
         "LingeringEuphonia",
+        "LeapingSiritPiano",
         "DunDun",
         "DjemDjemDrum"
     ] as const
     : [
-        "Piano",
+        "Piano",  
         "GrandPiano",
         "Contrabass",
         "Guitar",
@@ -88,7 +89,7 @@ export const INSTRUMENTS = APP_NAME === "Genshin"
 export const NOTES_PER_COLUMN = APP_NAME === "Genshin" ? 21 : 15
 export const NOTE_SCALE = {
     "Cb": ["Cb", "Dbb", "Db", "Ebb", "Eb", "Fb", "Gbb", "Gb", "Abb", "Ab", "Bbb", "Bb"],
-    "C": ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],
+    "C": ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"],  
     "C#": ["C#", "D", "D#", "E", "E#", "F#", "G", "G#", "A", "A#", "B", "B#"],
     "Db": ["Db", "Ebb", "Eb", "Fb", "F", "Gb", "Abb", "Ab", "Bbb", "Bb", "Cb", "C"],
     "D": ["D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B", "C", "C#"],
@@ -382,6 +383,16 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         layout: LAYOUT_KINDS.defaultGenshin,
         icons: LAYOUT_ICONS_KINDS.defaultGenshin,
         midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin
+    },
+        "LeapingSiritPiano": {
+        notes: 21,
+        fill: '#FFFAF0',//符号颜色
+        family: "strings",
+        midiName: "pizzicato strings",
+        clickColor: '#79CDCD',//点击后的颜色
+        baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.genshinUkulele,  
+        layout: LAYOUT_KINDS.defaultGenshin,  
+        icons: LAYOUT_ICONS_KINDS.defaultGenshin,
     },
     DunDun: {
         notes: 8,
