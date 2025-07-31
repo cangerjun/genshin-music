@@ -143,7 +143,7 @@ export const INSTRUMENT_NOTE_LAYOUT_KINDS = {
     skySFX6: ["", "", "", "", "", ""],
     skySFX14: ["C#", "E", "G", "A#", "C#", "E", "G", "A#", "C#", "E", "G", "A#", "C#", "E"],
     genshinVintageLyre: ["C", "Db", "Eb", "F", "G", "Ab", "Bb", "C", "D", "Eb", "F", "G", "A", "Bb", "C", "D", "Eb", "F", "G", "A", "Bb"],
-    genshinUkulele: ["C", "Db", "Eb", "F", "G", "Ab", "G", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B"]
+    genshinUkulele: ["C", "Dm", "Em", "F", "G", "Am", "G7", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B"]
 
 } as const
 Object.freeze(NOTE_SCALE)
@@ -358,7 +358,7 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.defaultGenshin,
         layout: LAYOUT_KINDS.defaultGenshin,
         icons: LAYOUT_ICONS_KINDS.defaultGenshin,
-        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin,
+        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin
     },
     "Ukulele": {
         notes: 21,
@@ -369,7 +369,7 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.genshinUkulele,
         layout: LAYOUT_KINDS.defaultGenshin,
         icons: LAYOUT_ICONS_KINDS.defaultGenshin,
-        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin
+        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin，
     },
     "LingeringEuphonia": {
         notes: 21,
@@ -380,7 +380,7 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.genshinUkulele,
         layout: LAYOUT_KINDS.defaultGenshin,
         icons: LAYOUT_ICONS_KINDS.defaultGenshin,
-        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin
+        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin，
     },
     "LeapingSpiritPiano": {
         notes: 21,
@@ -388,10 +388,10 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         family: "strings",
         midiName: "pizzicato strings",
         clickColor: '#4b959f',
-        baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.genshinUkulele,
+        baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.genshinGenshin,
         layout: LAYOUT_KINDS.defaultGenshin,
         icons: LAYOUT_ICONS_KINDS.defaultGenshin,
-        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin
+        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultGenshin,
     },
     DunDun: {
         notes: 8,
