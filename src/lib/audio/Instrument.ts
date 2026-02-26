@@ -23,6 +23,7 @@ type Layouts = {
     keyboard: string[]
     mobile: string[]
     abc: string[]
+    number: string[]
     playstation: string[]
     switch: string[]
 }
@@ -41,6 +42,7 @@ export class Instrument {
         mobile: [],
         abc: [],
         playstation: [],
+        number: [],
         switch: []
     }
     buffers: AudioBuffer[] = []
@@ -66,6 +68,7 @@ export class Instrument {
             mobile: [...layouts.mobileLayout],
             abc: [...layouts.abcLayout],
             playstation: [...layouts.playstationLayout],
+            number: [...layouts.numberLayout],
             switch: [...layouts.switchLayout]
         }
         for (let i = 0; i < this.instrumentData.notes; i++) {
@@ -114,6 +117,7 @@ export class Instrument {
                 return DO_RE_MI_NOTE_SCALE[baseNote][PITCH_TO_INDEX.get(pitch) ?? 0]
             }
             if (type === "ABC") return layout.abc[index]
+            if (type === "Number Layout") return layout.number[index]
             if (type === "No Text") return ''
             if (type === "Playstation") return layout.playstation[index]
             if (type === "Switch") return layout.switch[index]
