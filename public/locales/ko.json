@@ -730,7 +730,8 @@
     "SFX_MothCall": "나방 소리",
     "GrandPiano": "그랜드 피아노",
     "LingeringEuphonia": "여음",
-    "LeapingSpiritPiano": "리듬 건반"
+    "LeapingSpiritPiano": "리듬 건반",
+    "Harmonic Key":"화음 건반"
   },
   "versions": {
     "3-6-3": {

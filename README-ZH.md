@@ -13,7 +13,9 @@
 
 使用 `npm run dev:sky`  或   `npm run dev:genshin` 来启动原神或光遇的开发服务器
 
-你可以使用 `npm run build:genshin`  或  `npm run build:sky` 构建生产服务器, 或者使用 `npm run build:all` 构建两个程序
+你可以使用 `npm run build:genshin`  或  `npm run build:sky` 构建静态文件, 或者使用 `npm run build:all` 构建两个程序的
+
+使用 `npm run build:{APPname}-no-root` 构建的静态文件是放在二级目录的，例如：www\*****\skyMuisc\
 
 使用 `npm run preview:genshin`  或  `npm run preview:sky` 来启动已经构建好的服务器 (使用这种方法可以大幅减少资源占用)
 windows构建windows运行，linux构建linux运行
@@ -23,15 +25,6 @@ windows构建windows运行，linux构建linux运行
 我正在寻找有人帮助我将我的应用程序翻译成其他语言，
 如果您感兴趣，请参照翻译[讨论](https://github.com/Specy/genshin-music/discussions/52)
 
-~~# 如何在开发模式下运行桌面应用程序~~
-~~您需要首先启动开发服务器, 教程看 [这](#how-to-run-in-dev-mode) .~~
-~~然后你可以运行 `npm run start-tauri`~~
-
-
-# ~~如何构建桌面应用程序~~
-~~该应用程序使用tauri作为桌面捆绑包，这是一个沙盒网络视图。您可以使用 `npm run build-tauri:genshin` , `npm run build-tauri:sky`, `npm run build-tauri:all`来构建它.~~
-~~配置是预先设置的，以允许更改日志，如果您没有签名密钥，则构建将失败。~~
-~~如果您想在没有变更日志的情况下进行构建, 去 `src-tauri/tauri.conf.json` 文件下将 `updater` 设置为 false~~
 
 # 资料
 你可以在[这里](https://github.com/Specy/genshin-music/wiki)找到应用程序的资料

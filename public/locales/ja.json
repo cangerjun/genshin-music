@@ -693,6 +693,7 @@
         "DjemDjemDrum": "ジャンベ",
         "LingeringEuphonia": "「余韻」",
         "LeapingSpiritPiano": "ホッピングピアノ",
+        "Harmonic Key":"諧律のチェソバロ",
         "Piano": "ピアノ",
         "Grand Piano": "グランドピアノ",
         "Contrabass": "コントラバス",
@@ -728,6 +729,10 @@
         "SFX_MothCall": "蛾の鳴き声"
     },
     "versions": {
+        "3-7-0": {
+            "title": "新しい楽器と翻訳",
+            "change-1": "新しい楽器: 諧律のチェソバロ (原神)"
+        },
         "3-6-4": {
             "title": "翻訳テキスト更新",
             "change-1": "中国の台湾地区と中国の香港特別行政区の繁体字中国語翻訳を追加",
