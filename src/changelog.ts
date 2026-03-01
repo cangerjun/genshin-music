@@ -11,7 +11,7 @@ export const CHANGELOG: Update[] = [
         title: "New instruments (Genshin)",
         date: new Date('2026-02-25'),
         changes: [
-            'Added Harmonic Key (Genshin)'
+            'Added Harmonic Key (Genshin)',
             'Added Number Layout'
         ]
     },
