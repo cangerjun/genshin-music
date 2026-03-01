@@ -479,7 +479,7 @@
         "deleted_all_songs_notice": "刪除所有歌曲",
         "deleted_all_themes_notice": "刪除所有主題",
         "error_validating_song": "驗證歌曲「{{song_name}}」時發生錯誤",
-        "error_validating_folder": "驗證資料夾「{{folder_name}}」時發生錯誤」",
+        "error_validating_folder": "驗證資料夾「{{folder_name}}」時發生錯誤",
         "error_validating_theme": "驗證主題「{{theme_name}}」時發生錯誤",
         "validating_songs": "正在驗證歌曲",
         "validating_folders": "正在驗證資料夾",
@@ -693,6 +693,7 @@
         "DjemDjemDrum": "聚聚鼓",
         "LingeringEuphonia": "餘音",
         "LeapingSpiritPiano": "躍律琴",
+        "Harmonic Key":"諧律鍵琴",
         "Piano": "鋼琴",
         "Grand Piano": "大鋼琴",
         "Contrabass": "屁琴",
@@ -728,6 +729,10 @@
         "SFX_MothCall": "幼童之聲"
     },
     "versions": {
+        "3-7-0": {
+            "title": "原神新樂器",
+            "change-1": "新增樂器：諧律鍵琴 (原神)"
+        },
         "3-6-4": {
             "title": "更新翻譯檔案",
             "change-1": "新增台灣、香港的繁體中文翻譯",
