@@ -693,7 +693,7 @@
         "DjemDjemDrum": "ジャンベ",
         "LingeringEuphonia": "「余韻」",
         "LeapingSpiritPiano": "ホッピングピアノ",
-        "Harmonic Key":"諧律のチェソバロ",
+        "Harmonic Key":"諧律のチェンバロ",
         "Piano": "ピアノ",
         "Grand Piano": "グランドピアノ",
         "Contrabass": "コントラバス",
@@ -731,7 +731,7 @@
     "versions": {
         "3-7-0": {
             "title": "新しい楽器と翻訳",
-            "change-1": "新しい楽器: 諧律のチェソバロ (原神)"
+            "change-1": "新しい楽器: 諧律のチェンバロ (原神)"
         },
         "3-6-4": {
             "title": "翻訳テキスト更新",
