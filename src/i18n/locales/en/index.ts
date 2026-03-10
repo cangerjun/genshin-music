@@ -793,8 +793,19 @@ export const i18n_en = {
         "GrandPiano": "Grand Piano",
         "LingeringEuphonia": "Lingering Euphonia",
         "LeapingSpiritPiano": "Leaping Spirit Piano",
+        "HarmonicKey": "Harmonic Key",
     } satisfies Record<InstrumentName, string>,
     versions: {
+        "3-7-0": {
+            "title": "New instruments (Genshin)",
+            "change-1": "Added Harmonic Key (Genshin)",
+            "change-2": "Added Number Music Notion layout",
+        },
+        "3-6-4": {
+            "title": "Chinese localization expansion",
+            "change-1": "Added Chinese (Hong Kong), Chinese (Taiwan), Japanese and Korean translation",
+            "chance-2": "Improved Turkish translation"
+        },
         "3-6-3": {
             "title": "New instruments (Genshin)",
             "change-1": "Added Leaping Spirit Piano (Genshin)",

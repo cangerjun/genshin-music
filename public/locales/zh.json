@@ -683,6 +683,14 @@
             "vsrg_add_hit_object": "添加打击乐对象（同步到注册的按键绑定）"
         }
     },
+    "composer_note_name_type":{
+        "Note_name": "音名",
+        "Keyboard_layout": "键盘布局",
+        "Your_Keyboard_layout": "你键盘的布局",
+        "Do_Re_Mi": "哆 来 咪",
+        "ABC": "ABC",
+        "No_Text" : "无文本"
+    },
     "instruments": {
         "Lyre": "风物之诗琴",
         "Vintage-Lyre": "老旧的诗琴",
@@ -693,6 +701,7 @@
         "DjemDjemDrum": "聚聚鼓",
         "LingeringEuphonia": "余音",
         "LeapingSpiritPiano": "跃律琴",
+        "HarmonicKey": "谐律键琴",
         "Piano": "钢琴",
         "Grand Piano": "大钢琴",
         "Contrabass": "屁琴",
@@ -728,6 +737,11 @@
         "SFX_MothCall": "幼童之声"
     },
     "versions": {
+        "3-7-0": {
+            "title": "新乐器(原神)",
+            "change-1": "新增了谐律键琴（原神）",
+            "change-2": "新增了简谱数字键盘布局"
+        },
         "3-6-4": {
             "title": "翻译文本更新",
             "change-1": "新增中国台湾地区与中国香港特别行政区的繁体中文翻译",

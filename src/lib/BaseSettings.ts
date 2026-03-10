@@ -43,7 +43,7 @@ export type ComposerSettingsType = BaseSettings<ComposerSettingsDataType>
 
 export const ComposerSettings = {
     other: {
-        settingVersion: APP_NAME + 69,
+        settingVersion: APP_NAME + 70,
     },
     data: {
         bpm: {
@@ -175,7 +175,7 @@ export type PlayerSettingsDataType = {
 export type PlayerSettingsType = BaseSettings<PlayerSettingsDataType>
 export const PlayerSettings = {
     other: {
-        settingVersion: APP_NAME + 79 //change when instrument is added
+        settingVersion: APP_NAME + 80 //change when instrument is added
     },
     data: {
         instrument: {
@@ -463,7 +463,7 @@ export type VsrgComposerSettingsDataType = {
 export type VsrgComposerSettingsType = BaseSettings<VsrgComposerSettingsDataType>
 export const VsrgComposerSettings = {
     other: {
-        settingVersion: APP_NAME + 14
+        settingVersion: APP_NAME + 15
     },
     data: {
         keys: {
@@ -560,7 +560,7 @@ export type VsrgPlayerSettingsDataType = {
 export type VsrgPlayerSettingsType = BaseSettings<VsrgPlayerSettingsDataType>
 export const VsrgPlayerSettings = {
     other: {
-        settingVersion: APP_NAME + 6
+        settingVersion: APP_NAME + 7
     },
     data: {
         approachTime: {
@@ -647,7 +647,7 @@ export type ZenKeyboardSettingsType = BaseSettings<ZenKeyboardSettingsDataType>
 
 export const ZenKeyboardSettings = {
     other: {
-        settingVersion: APP_NAME + 24 //change when instrument is added
+        settingVersion: APP_NAME + 25 //change when instrument is added
     },
     data: {
         instrument: {
