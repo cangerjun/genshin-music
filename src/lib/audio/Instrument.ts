@@ -117,7 +117,7 @@ export class Instrument {
                 return DO_RE_MI_NOTE_SCALE[baseNote][PITCH_TO_INDEX.get(pitch) ?? 0]
             }
             if (type === "ABC") return layout.abc[index]
-            if (type === "Number Layout") return layout.number[index]
+            if (type === "1 2 3") return layout.number[index]
             if (type === "No Text") return ''
             if (type === "Playstation") return layout.playstation[index]
             if (type === "Switch") return layout.switch[index]
