@@ -290,7 +290,7 @@ export type NoteNameType =
     | 'No Text'
     | 'Playstation'
     | 'Switch'
-    | 'Number Layout'
+    | '1 2 3'
 
 export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
     ? [
@@ -300,7 +300,7 @@ export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
         "Do Re Mi",
         "ABC",
         "No Text",
-        "Number Layout",
+        "1 2 3",
     ]
     : [
         "Note name",
@@ -311,7 +311,7 @@ export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
         "No Text",
         "Playstation",
         "Switch",
-        "Number Layout",
+        "1 2 3",
     ]
 
 export type InstrumentDataType = {
