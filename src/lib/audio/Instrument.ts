@@ -21,7 +21,6 @@ import {DEFAULT_ENG_KEYBOARD_MAP} from "$i18n/i18n";
 
 type Layouts = {
     keyboard: string[]
-    mobile: string[]
     abc: string[]
     number: string[]
     playstation: string[]
@@ -39,7 +38,6 @@ export class Instrument {
     notes: ObservableNote[] = []
     layouts: Layouts = {
         keyboard: [],
-        mobile: [],
         abc: [],
         playstation: [],
         number: [],
@@ -65,7 +63,6 @@ export class Instrument {
         const layouts = this.instrumentData.layout
         this.layouts = {
             keyboard: [...layouts.keyboardLayout],
-            mobile: [...layouts.mobileLayout],
             abc: [...layouts.abcLayout],
             playstation: [...layouts.playstationLayout],
             number: [...layouts.numberLayout],
@@ -75,7 +72,6 @@ export class Instrument {
             const noteName = this.layouts.keyboard[i]
             const noteNames = {
                 keyboard: noteName,
-                mobile: this.layouts.mobile[i]
             }
             const url = `${BASE_PATH}/assets/audio/${APP_NAME.toLowerCase()}/${this.name}/${i}.mp3`
             const note = new ObservableNote(i, noteNames, url, this.instrumentData.baseNotes[i], this.instrumentData.midiNotes[i] ?? 0)
@@ -208,7 +204,6 @@ export function fetchAudioBuffer(url: string, audioContext: AudioContext): Promi
 
 interface NoteName {
     keyboard: string,
-    mobile: string
 }
 
 export type NoteDataState = {
