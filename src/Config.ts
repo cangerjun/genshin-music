@@ -225,12 +225,12 @@ export const LAYOUT_KINDS = {
             "Z X C V B").split(" "),
         numberLayout: (
             "1 2 3 4 5 " +
-            "1 2 3 4 5 " +
-            "1 2 3 4 5").split(" "),
+            "6 7 1 2 3 " +
+            "4 5 6 7 1").split(" "),
         mobileLayout: (
             "do re mi fa so " +
-            "do re mi fa so " +
-            "do re mi fa so").split(" "),
+            "la ti do re mi " +
+            "fa so la ti do").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 A5 " +
             "B1 B2 B3 B4 B5 " +
@@ -252,7 +252,7 @@ export const LAYOUT_KINDS = {
             "A S D").split(" "),
         mobileLayout: (
             "do re mi " +
-            "do re mi").split(" "),
+            "do re mi").split(" "),//FIXEME:maybe this order is wrong
         abcLayout: (
             "A1 A2 A3 " +
             "B1 B2 B3").split(" "),
@@ -266,7 +266,7 @@ export const LAYOUT_KINDS = {
         ).split(" "),
         numberLayout: (
             "1 2 3 " +
-            "1 2 3"
+            "1 2 3"//FIXEME:maybe this order is wrong
         ).split(" ")
     },
 
@@ -290,7 +290,7 @@ export type NoteNameType =
     | 'No Text'
     | 'Playstation'
     | 'Switch'
-    | 'Number Layout'
+    | '1 2 3'
 
 export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
     ? [
@@ -300,7 +300,7 @@ export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
         "Do Re Mi",
         "ABC",
         "No Text",
-        "Number Layout",
+        "1 2 3",
     ]
     : [
         "Note name",
@@ -311,7 +311,7 @@ export const NOTE_NAME_TYPES: NoteNameType[] = APP_NAME === "Genshin"
         "No Text",
         "Playstation",
         "Switch",
-        "Number Layout",
+        "1 2 3",
     ]
 
 export type InstrumentDataType = {
