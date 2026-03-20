@@ -184,7 +184,7 @@ export const LAYOUT_KINDS = {
         numberLayout: (
             "1\u0307 2\u0307 3\u0307 4\u0307 5\u0307 6\u0307 7\u0307 " +
             "1 2 3 4 5 6 7 " +
-            "1\u0324 2\u0323 3\u0323 4\u0323 5\u0323 6\u0323 7\u0323").split(" "),
+            "1\u0323 2\u0323 3\u0323 4\u0323 5\u0323 6\u0323 7\u0323").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 A5 A6 A7 " +
             "B1 B2 B3 B4 B5 B6 B7 " +
@@ -198,7 +198,7 @@ export const LAYOUT_KINDS = {
             "A S D F").split(" "),
         numberLayout: (
             "1 2 3 4 " +
-            "1\u0323 2\u0323 3\u03w23 4\u0323").split(" "),
+            "1\u0323 2\u0323 3\u0323 4\u0323").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 " +
             "B1 B2 B3 B4").split(" "),
