@@ -182,9 +182,9 @@ export const LAYOUT_KINDS = {
             "A S D F G H J " +
             "Z X C V B N M").split(" "),
         numberLayout: (
+            "1\u0307 2\u0307 3\u0307 4\u0307 5\u0307 6\u0307 7\u0307 " +
             "1 2 3 4 5 6 7 " +
-            "1\u030A 2\u030A 3\u030A 4\u030A 5\u030A 6\u030A 7\u030A " +
-            "1\u030A\u030A 2\u030A\u030A 3\u030A\u030A 4\u030A\u030A 5\u030A\u030A 6\u030A\u030A 7\u030A\u030A").split(" "),
+            "1\u0324 2\u0323 3\u0323 4\u0323 5\u0323 6\u0323 7\u0323").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 A5 A6 A7 " +
             "B1 B2 B3 B4 B5 B6 B7 " +
@@ -198,7 +198,7 @@ export const LAYOUT_KINDS = {
             "A S D F").split(" "),
         numberLayout: (
             "1 2 3 4 " +
-            "1\u030A 2\u030A 3\u030A 4\u030A").split(" "),
+            "1\u0323 2\u0323 3\u03w23 4\u0323").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 " +
             "B1 B2 B3 B4").split(" "),
@@ -218,8 +218,8 @@ export const LAYOUT_KINDS = {
             "Z X C V B").split(" "),
         numberLayout: (
             "1 2 3 4 5 " +
-            "6 7 1\u030A 2\u030A 3\u030A " +
-            "4\u030A 5\u030A 6\u030A 7\u030A 1\u030A\u030A").split(" "),
+            "6 7 1\u0307 2\u0307 3\u0307 " +
+            "4\u0307 5\u0307 6\u0307 7\u0307 1\u0307\u0307").split(" "),
         abcLayout: (
             "A1 A2 A3 A4 A5 " +
             "B1 B2 B3 B4 B5 " +
@@ -252,7 +252,7 @@ export const LAYOUT_KINDS = {
         ).split(" "),
         numberLayout: (
             "1 2 3 " +
-            "1\u030A 2\u030A 3\u030A"
+            "1\u0307 2\u0307 3\u0307"
         ).split(" ")
     },
 
