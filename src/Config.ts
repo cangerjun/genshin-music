@@ -53,6 +53,7 @@ export const INSTRUMENTS = APP_NAME === "Genshin"
     ] as const
     : [
         "Piano",
+        "Srinova",
         "GrandPiano",
         "Contrabass",
         "Guitar",
@@ -154,6 +155,7 @@ Object.freeze(INSTRUMENT_NOTE_LAYOUT_KINDS)
 export const INSTRUMENT_MIDI_LAYOUT_KINDS = {
     defaultSky: [60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79, 81, 83, 84],
     defaultGenshin: [72, 74, 76, 77, 79, 81, 83, 60, 62, 64, 65, 67, 69, 71, 48, 50, 52, 53, 55, 57, 59,],
+    defaultSrinova: ["F", "G", "A", "B", "C", "D", "E", "F", "G", "A", "B", "C", "D", "E", "F"],
     skyBell: [60, 62, 67, 69, 72, 74, 79, 81],
     skyHandpan: [62, 69, 72, 74, 77, 79, 81, 84],
     defaultDrums: [60, 62, 64, 65, 67, 69, 71, 72],
@@ -255,11 +257,32 @@ export const LAYOUT_KINDS = {
             "1\u0307 2\u0307 3\u0307"
         ).split(" ")
     },
+    defaultSrinova: {
+        keyboardLayout: (
+            "Q W E R T " +
+            "A S D F G " +
+            "Z X C V B").split(" "),
+        numberLayout: (
+            "4\u0307  5\u0307  6\u0307  7\u0307  1\u0307 \u0307  " +
+            "6 7 1\u0307  2\u0307  3\u0307  " +
+            "1 2 3 4 5").split(" "),
+        mobileLayout:(
+            "fa so la ti do " +
+            "la ti do re mi " +
+            "do re mi fa so").split(" "),
+        abcLayout:(
+            "A1 A2 A3 A4 A5 " +
+            "B1 B2 B3 B4 B5 " +
+            "C1 C2 C3 C4 C5").split(" "),
+        playstationLayout: new Array(21).fill(" "),
+        switchLayout: new Array(21).fill(" ")
+    },
 
 }
 //TODO add the instrument data like layout kinds here instead of LAYOUT_KINDS
 export const LAYOUT_ICONS_KINDS = {
     defaultSky: "dmcr dm cr dm cr cr dm dmcr dm cr cr dm cr dm dmcr".split(" ") as NoteImage[],
+    defaultSrinova: "dm cr dm cr dmcr dm cr dmcr dm cr dmcr dm cr dm cr dm".split(" ") as NoteImage[],
     defaultSkyDrums: "cr dm cr dm cr dm cr dm".split(" ") as NoteImage[],
     defaultSkySynth: "dmcr dm cr dm cr dm cr dmcr".split(" ") as NoteImage[],
     defaultGenshinDrums: "do re mi fa do re mi fa".split(" ") as NoteImage[],
@@ -619,6 +642,15 @@ export const BaseinstrumentsData: { [key in string]: InstrumentDataType } = APP_
         baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.defaultSky,
         layout: LAYOUT_KINDS.defaultSky,
         icons: LAYOUT_ICONS_KINDS.defaultSky,
+        midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultSky,
+    },
+        Srinova: {
+        notes: 15,
+        family: "piano",
+        midiName: "acoustic grand piano",
+        baseNotes: INSTRUMENT_NOTE_LAYOUT_KINDS.defaultSrinova,
+        layout: LAYOUT_KINDS.defaultSrinova,
+        icons: LAYOUT_ICONS_KINDS.defaultSrinova,
         midiNotes: INSTRUMENT_MIDI_LAYOUT_KINDS.defaultSky,
     },
     GrandPiano: {
