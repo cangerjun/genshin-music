@@ -2,6 +2,8 @@ import fse from 'fs-extra'
 import urlJoin from 'url-join'
 import clc from "cli-color";
 import { execSync } from 'child_process'
+import path from 'path'
+
 const skyPath = './src/appData/sky'
 const genshinPath = './src/appData/genshin'
 const publicPath = './public'
@@ -9,15 +11,49 @@ const chosenApp = process.argv[2]
 const date = new Date()
 const SW_VERSION = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}-${date.getMinutes()}`
 const PATH_NAMES = {
-    Sky: "skyMusic",
-    Genshin: "genshinMusic"
+    Sky: "sky",
+    Genshin: "genshin"
 }
 if (!['Genshin', 'Sky', "All"].includes(chosenApp)) {
     console.error('Please specify an app name [Sky / Genshin / All]')
     process.exit(1)
 }
 
+async function filterAudioFilesInBuild(app) {
+    const buildAudioDir = path.join('build', PATH_NAMES[app], 'assets', 'audio')
+    const targetFolder = app === 'Sky' ? 'sky' : 'genshin'
+    
+    if (!await fse.pathExists(buildAudioDir)) {
+        console.log(clc.yellow(`Build audio directory not found: ${buildAudioDir}`))
+        return
+    }
 
+    const allDirs = await fse.readdir(buildAudioDir)
+    
+    for (const dir of allDirs) {
+        const dirPath = path.join(buildAudioDir, dir)
+        const stat = await fse.stat(dirPath)
+        
+        if (!stat.isDirectory() || dir.includes('reverb')) {
+            continue
+        }
+        
+        if (app === 'Sky') {
+            if (dir !== 'sky' && dir !== 'MetronomeSFX') {
+                await fse.remove(dirPath)
+                console.log(clc.cyan(`Excluded from build: ${dir}/`))
+            }
+        } else {
+            if (dir.toLowerCase() !== targetFolder) {
+                await fse.remove(dirPath)
+                console.log(clc.cyan(`Excluded from build: ${dir}/`))
+            }
+        }
+    }
+    
+    const keptFolders = app === 'Sky' ? 'sky/, MetronomeSFX/' : `${targetFolder}/`
+    console.log(clc.green(`Audio filtered in build/${PATH_NAMES[app]}, kept: ${keptFolders}`))
+}
 
 async function execute() {
     const toBuild = chosenApp === "All" ? ['Sky', 'Genshin'] : [chosenApp]
@@ -40,6 +76,7 @@ async function execute() {
                     { stdio: 'inherit' }
                 )
             }
+            await filterAudioFilesInBuild(app)
             console.log(clc.green(`${app} build complete \n`))
         }
         console.log(clc.bold.green("Build complete \n"))
