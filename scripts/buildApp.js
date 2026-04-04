@@ -11,14 +11,16 @@ const chosenApp = process.argv[2]
 const date = new Date()
 const SW_VERSION = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${date.getHours()}-${date.getMinutes()}`
 const PATH_NAMES = {
-    Sky: "sky",
-    Genshin: "genshin"
+    Sky: "skyMusic",
+    Genshin: "genshinMusic"
 }
+
 if (!['Genshin', 'Sky', "All"].includes(chosenApp)) {
     console.error('Please specify an app name [Sky / Genshin / All]')
     process.exit(1)
 }
 
+/** Filter audio files in build output, keeping only instrument folders for the current app */
 async function filterAudioFilesInBuild(app) {
     const buildAudioDir = path.join('build', PATH_NAMES[app], 'assets', 'audio')
     const targetFolder = app === 'Sky' ? 'sky' : 'genshin'
@@ -34,25 +36,19 @@ async function filterAudioFilesInBuild(app) {
         const dirPath = path.join(buildAudioDir, dir)
         const stat = await fse.stat(dirPath)
         
+        // Skip files and reverb audio (shared across all apps)
         if (!stat.isDirectory() || dir.includes('reverb')) {
             continue
         }
         
-        if (app === 'Sky') {
-            if (dir !== 'sky' && dir !== 'MetronomeSFX') {
-                await fse.remove(dirPath)
-                console.log(clc.cyan(`Excluded from build: ${dir}/`))
-            }
-        } else {
-            if (dir.toLowerCase() !== targetFolder) {
-                await fse.remove(dirPath)
-                console.log(clc.cyan(`Excluded from build: ${dir}/`))
-            }
+        // Keep app's instrument folder and MetronomeSFX
+        if (dir !== targetFolder && dir !== 'MetronomeSFX') {
+            await fse.remove(dirPath)
+            console.log(clc.cyan(`Excluded from build: ${dir}/`))
         }
     }
     
-    const keptFolders = app === 'Sky' ? 'sky/, MetronomeSFX/' : `${targetFolder}/`
-    console.log(clc.green(`Audio filtered in build/${PATH_NAMES[app]}, kept: ${keptFolders}`))
+    console.log(clc.green(`Audio filtered in build/${PATH_NAMES[app]}, kept: ${targetFolder}/, MetronomeSFX/`))
 }
 
 async function execute() {
@@ -61,8 +57,18 @@ async function execute() {
         for (const app of toBuild) {
             const basePath = Boolean(process.argv[3]) ? `/${PATH_NAMES[app]}` : ""
             console.log(clc.bold.yellow(`Building ${app}...`))
-            await fse.copy(app === "Sky" ? skyPath : genshinPath, publicPath, { overwrite: true })
+            
+            // Copy app resources
+            await fse.copy(
+                app === "Sky" ? skyPath : genshinPath, 
+                publicPath, 
+                { overwrite: true }
+            )
+            
+            // Update manifest
             await updateManifest(basePath)
+            
+            // Run Next.js build
             if (process.platform === 'win32') {
                 console.log(clc.italic("Building on windows"))
                 execSync(
@@ -76,7 +82,10 @@ async function execute() {
                     { stdio: 'inherit' }
                 )
             }
+            
+            // Filter audio files in build output (does not delete public source files)
             await filterAudioFilesInBuild(app)
+            
             console.log(clc.green(`${app} build complete \n`))
         }
         console.log(clc.bold.green("Build complete \n"))
