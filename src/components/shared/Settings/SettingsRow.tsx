@@ -40,12 +40,11 @@ function SettingsRow({data, update, objKey, changeVolume}: SettingsRowProps) {
         className={s['settings-row']}
         style={{backgroundColor: theme.layer('menu_background', 0.15).toString()}}
     >
-
         <div className={hasTooltip(data.tooltip)} style={{flex: '1'}}>
-             {t(`props.${data.name}`)}
+             {(t as any)(`props.${data.name}`)}
             {data.tooltip &&
                 <Tooltip style={{width: '12rem'}}>
-                    {t(`props.${data.tooltip}`)}
+                    {(t as any)(`props.${data.tooltip}`)}
                 </Tooltip>
             }
         </div>
@@ -59,7 +58,11 @@ function SettingsRow({data, update, objKey, changeVolume}: SettingsRowProps) {
                 data={data}
             >
                 {data.options.map(e => {
-                    return <option value={e} key={e}>{e}</option>
+                    const optionKey = typeof e === 'string' ? e.replace(/ /g, '_') : e
+                    const optionText = typeof e === 'string' && (data.name as string).includes('note_name_type')
+                        ? (t as any)(`props.${data.name}_options.${optionKey}`) || e
+                        : e
+                    return <option value={e} key={e}>{optionText}</option>
                 })}
             </Select>
         }
