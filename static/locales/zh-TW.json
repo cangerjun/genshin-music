@@ -455,6 +455,17 @@
             "composer_background_image": "編曲介面背景圖片 (URL)",
             "theme_name": "主題名稱"
         },
+        "default_theme_names": {
+            "default": "預設",
+            "pink": "粉紅",
+            "blue": "藍色",
+            "rainy_lullaby": "雨林",
+            "liyue": "璃月",
+            "hacker_theme": "駭客",
+            "snowy_night": "雪夜",
+            "eons_of_time": "赤王陵",
+            "sky_music": "光遇音樂"
+        },
         "opaque_performance_warning": "GIF 背景和不透明（透明）顏色可能會降低效能",
         "your_themes": "你的主題",
         "new_theme": "新主題",

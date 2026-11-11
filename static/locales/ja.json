@@ -455,6 +455,17 @@
             "composer_background_image": "コンポーザー背景画像 (URL)",
             "theme_name": "テーマ名"
         },
+        "default_theme_names": {
+            "default": "デフォルト",
+            "pink": "ピンク",
+            "blue": "ブルー",
+            "rainy_lullaby": "雨林",
+            "liyue": "璃月",
+            "hacker_theme": "ハッカー",
+            "snowy_night": "雪の夜",
+            "eons_of_time": "赤王陵",
+            "sky_music": "天空楽器"
+        },
         "opaque_performance_warning": "GIF背景と不透明（透明）色はパフォーマンスを低下させる可能性があります",
         "your_themes": "あなたのテーマ",
         "new_theme": "新規テーマ",

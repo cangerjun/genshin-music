@@ -4,6 +4,7 @@
   import { fileService } from '$core/Services/FileService';
   import { logger } from '$stores/LoggerStore.svelte';
   import type { SerializedTheme } from '$core/theme/ThemeProvider.svelte';
+  import { tThemeName } from '$i18n/binding.svelte';
 
   let {
     theme,
@@ -53,7 +54,7 @@
       .toString()};z-index:2;text-shadow:{image ? '0px 0px 10px rgba(0,0,0,0.4)' : 'none'}"
   >
     <div class="text-ellipsis" style="z-index:2;padding:0.4rem 0.2rem">
-      {theme.other.name}
+      {tThemeName(theme)}
     </div>
     <!-- The half that used to carry these four declarations inline: they are a class now so the
          portrait rule below can drop the padding once the icons carry their own. -->

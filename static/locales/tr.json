@@ -455,6 +455,17 @@
             "composer_background_image": "Besteleyici arka plan fotoğrafı (link URL)",
             "theme_name": "Tema adı"
         },
+        "default_theme_names": {
+            "default": "Varsayılan",
+            "pink": "Pembe",
+            "blue": "Mavi",
+            "rainy_lullaby": "Yağmurlu Ninni",
+            "liyue": "Liyue",
+            "hacker_theme": "Hacker",
+            "snowy_night": "Karlı Gece",
+            "eons_of_time": "Zamanın Devirleri",
+            "sky_music": "Sky Music"
+        },
         "opaque_performance_warning": "GIF arka planları ve saydam renkler performansı azaltabilir.",
         "your_themes": "Senin temaların",
         "new_theme": "Yeni tema",

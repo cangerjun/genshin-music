@@ -3477,7 +3477,7 @@ export class ComposerRenderer {
       // Pixi rasterises Text once. Rebuild the labels after the bundled font loads, including when
       // the user switches to numbered notation after the renderer was created.
       void document.fonts
-        .load('16px XVACLE', '1zx')
+        .load('16px jpfont-nds', "1q2a3'4\"")
         .then((faces) => {
           if (this.destroyed || faces.length === 0) return;
           this.jianpuFontReady = true;
@@ -3572,10 +3572,10 @@ export class ComposerRenderer {
           this.state.noteNameType === '1 2 3' && this.jianpuFontReady && !resolved.faint;
         label.style.fontSize = resolved.faint ? fontSize * PRO_FAINT_LABEL_SCALE : fontSize;
         label.style.fontFamily = jianpu
-          ? 'XVACLE, Arial, Helvetica, sans-serif'
+          ? 'jpfont-nds, Arial, Helvetica, sans-serif'
           : 'Arial, Helvetica, sans-serif';
-        //x-Vacle's @font-face size-adjust (120%, App.css) enlarges it on the canvas too, so no
-        //size multiplier here; the line box is one enlarged em, as in the DOM labels
+        //jpfont-nds draws octave dots above/below the digit. Its font-wide metrics reserve room
+        //for three-dot marks, so a fixed 1.2em line box keeps the strip rows compact as before.
         label.style.lineHeight = jianpu ? fontSize * 1.2 : 0;
         label.style.fill = this.theme.pro.stripText;
         label.alpha = resolved.faint ? PRO_FAINT_LABEL_ALPHA : 1;

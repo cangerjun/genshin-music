@@ -30,7 +30,7 @@
   import { themeStore } from '$stores/ThemeStore.svelte';
   import { fileService } from '$core/Services/FileService';
   import { setPageVisited } from '$stores/PageVisitStore.svelte';
-  import { t } from '$i18n/binding.svelte';
+  import { t, tThemeName } from '$i18n/binding.svelte';
 
   onMount(() => {
     setPageVisited('theme');
@@ -193,7 +193,7 @@
         {t('theme:edit_colors')}
       </Header>
       <div>
-        {theme.getOther('name')}
+        {tThemeName(theme.state)}
       </div>
       {#each theme.toArray() as prop (prop.name)}
         <ThemePropriety
@@ -221,7 +221,7 @@
       />
       <ThemeInput
         name={t('theme:theme_prop.theme_name')}
-        value={theme.getOther('name')}
+        value={tThemeName(theme.state)}
         disabled={!theme.isEditable()}
         onChange={(e) => theme.setOther('name', e)}
         onLeave={() => theme.save()}

@@ -455,6 +455,17 @@
             "composer_background_image": "Gambar latar belakang komposer (URL)",
             "theme_name": "Nama tema"
         },
+        "default_theme_names": {
+            "default": "Bawaan",
+            "pink": "Merah Muda",
+            "blue": "Biru",
+            "rainy_lullaby": "Nina Bobo Hujan",
+            "liyue": "Liyue",
+            "hacker_theme": "Peretas",
+            "snowy_night": "Malam Bersalju",
+            "eons_of_time": "Berabad-abad Waktu",
+            "sky_music": "Musik Sky"
+        },
         "opaque_performance_warning": "Latar belakang GIF dan warna buram (transparan) dapat mengurangi kinerja",
         "your_themes": "Tema Anda",
         "new_theme": "Tema Baru",

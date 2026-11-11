@@ -618,6 +618,17 @@ export const i18n_en = {
       composer_background_image: 'Composer Background image (URL)',
       theme_name: 'Theme name',
     },
+    default_theme_names: {
+      default: 'Default',
+      pink: 'Pink',
+      blue: 'Blue',
+      rainy_lullaby: 'Rainforest',
+      liyue: 'liyue',
+      hacker_theme: 'Hacker',
+      snowy_night: 'Snowy Night',
+      eons_of_time: 'The Masouleum of King Deshret',
+      sky_music: 'Sky Music',
+    },
     opaque_performance_warning:
       'GIF backgrounds and opaque (transparent) colors could reduce performance',
     your_themes: 'Your Themes',

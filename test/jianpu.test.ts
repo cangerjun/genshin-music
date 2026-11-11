@@ -8,9 +8,9 @@ describe('x-Vacle numbered notation', () => {
     expect(STANDARD_21_LABELS.number[14]).toBe('1\u0323');
     expect(STANDARD_15_LABELS.number[14]).toBe('1\u0307\u0307');
 
-    expect(noteLabelForDisplay('1\u0307', '1 2 3')).toBe('1z');
-    expect(noteLabelForDisplay('2\u0323', '1 2 3')).toBe('2x');
-    expect(noteLabelForDisplay('1\u0307\u0307', '1 2 3')).toBe('1a');
+    expect(noteLabelForDisplay('1\u0307', '1 2 3')).toBe("1'");
+    expect(noteLabelForDisplay('2\u0323', '1 2 3')).toBe('2q');
+    expect(noteLabelForDisplay('1\u0307\u0307', '1 2 3')).toBe('1"');
     expect(noteLabelForDisplay('3', '1 2 3')).toBe('3');
   });
 

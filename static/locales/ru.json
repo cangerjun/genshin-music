@@ -455,6 +455,17 @@
             "composer_background_image": "Фоновое изображение секвенсора (URL)",
             "theme_name": "Название темы"
         },
+        "default_theme_names": {
+            "default": "По умолчанию",
+            "pink": "Розовая",
+            "blue": "Синяя",
+            "rainy_lullaby": "Дождливая колыбельная",
+            "liyue": "Ли Юэ",
+            "hacker_theme": "Хакер",
+            "snowy_night": "Снежная ночь",
+            "eons_of_time": "Эпохи времени",
+            "sky_music": "Sky Music"
+        },
         "opaque_performance_warning": "Анимированные изображения и прозрачные цвета могут снизить производительность",
         "your_themes": "Ваши темы",
         "new_theme": "Новая тема",

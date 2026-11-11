@@ -455,6 +455,17 @@
       "composer_background_image": "Imagem de fundo do compositor (URL)",
       "theme_name": "Nome do tema"
     },
+    "default_theme_names": {
+      "default": "Padrão",
+      "pink": "Rosa",
+      "blue": "Azul",
+      "rainy_lullaby": "Canção de ninar da chuva",
+      "liyue": "Liyue",
+      "hacker_theme": "Hacker",
+      "snowy_night": "Noite nevada",
+      "eons_of_time": "Eras do tempo",
+      "sky_music": "Sky Music"
+    },
     "opaque_performance_warning": "Fundos GIF e cores opacas (transparentes) podem reduzir o desempenho",
     "your_themes": "Seus Temas",
     "new_theme": "Novo Tema",

@@ -96,3 +96,27 @@ export function tVariant(instrument: string, option: string): string {
   );
   return variant?.options.find((candidate) => candidate.id === option)?.label ?? option;
 }
+
+/**
+ * Default theme display name: the locale's `theme:default_theme_names.<id>` entry when present,
+ * else the theme's own `other.name` (English, so an untranslated locale shows what it always
+ * showed). Only the shipped defaults are translated - `editable` themes are user-created or
+ * imported, and their names are whatever the user typed, so those pass straight through.
+ *
+ * Keyed by theme id rather than by name so a user theme that happens to be called "Blue" does
+ * not get translated: the shipped ids live in core/theme/defaultThemes.ts, and the unnamed base
+ * theme (ThemeSettings, id null) maps to "default".
+ */
+export function tThemeName(theme: {
+  id: string | null;
+  editable: boolean;
+  other: { name: string };
+}): string {
+  void binding.tick;
+  if (theme.editable) return theme.other.name;
+  const id = (theme.id ?? 'default').toLowerCase().replace(/[\s-]+/g, '_');
+  const key = `theme:default_theme_names.${id}`;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- same narrowly scoped passthrough as `t` above
+  if (i18n.exists(key)) return i18n.t(key as any) as string;
+  return theme.other.name;
+}
